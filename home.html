@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>GENDER EDUCATION</title>
+		<link rel="icon" href="img/logo2.png" />
+		<style>
+			html {
+				font-size: 62.5%;
+			}
+			* {
+				margin: 0 auto;
+				padding: 0;
+				box-sizing: border-box;
+				max-width: 100%;
+			}
+			body {
+				height: 100vh;
+				max-width: 100%;
+				background-image: url(https://png.pngtree.com/background/20210717/original/pngtree-abstract-wavy-light-yellow-background-picture-image_1446738.jpg);
+				background-size: cover;
+			}
+			a {
+				text-decoration: none;
+			}
+			/* định dạng chung cho khung header, footer, .log và home */
+			header,
+			footer,
+			.log,
+			.home {
+				margin: 10px;
+				box-sizing: border-box;
+				width: 90%;
+				float: right;
+			}
+			/*định dạng header */
+			header {
+				background-color: #d6e0c5;
+				display: flex;
+			}
+			.logo1,
+			.monkey1 {
+				flex: 1;
+			}
+			.header {
+				flex: 3;
+			}
+			.logo1 {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.monkey1 {
+				margin: 10px 10px 10px 80px;
+			}
+			.logo {
+				float: left;
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				float: right;
+			}
+			header h1,
+			header h3 {
+				text-align: center;
+			}
+			header h1 {
+				font-size: 5.5rem;
+				font-family: cursive;
+				font-weight: bolder;
+				color: #aca825;
+				margin: 15px;
+			}
+			header h3 {
+				font-size: 3rem;
+				font-family: "Courier New", Courier, monospace;
+				font-weight: lighter;
+			}
+			.monkey {
+				width: 150px;
+				height: 80px;
+				padding: 10px 30px;
+			}
+			header h5 {
+				font-size: 1.2rem;
+				color: #aca825;
+				font-weight: bold;
+			}
+			/* Định dạng cho log */
+			.log {
+				background-color: #ffeee7;
+				border: 2px solid #d3e3fc;
+			}
+			.log p {
+				font-size: 1.7rem;
+				float: right;
+				width: 150px;
+				color: #00887a;
+				margin: 15px;
+				text-align: center;
+			}
+			.box {
+				float: right;
+				display: inline;
+				width: 80px;
+				padding: 8px;
+				border: 2px solid #d3e3fc;
+				background-color: white;
+				margin: 8px;
+				cursor: pointer;
+			}
+			.box h4 {
+				text-align: center;
+				color: #00887a;
+				font-size: 1.5rem;
+			}
+			/* định dạng footer */
+			footer {
+				display: flex;
+				background-color: #d3e3fc;
+			}
+			.app,
+			.locate {
+				flex: 2;
+			}
+			.app,
+			.locate,
+			.by {
+				padding: 15px 15px;
+				font-size: 1.3rem;
+				color: #00887a;
+			}
+			.by {
+				flex: 1;
+			}
+			.locate img {
+				float: left;
+			}
+			.by {
+				display: flex;
+				justify-content: right;
+				align-items: center;
+			}
+			/* Định dạng menu*/
+			.menu {
+				width: 100px;
+				display: flex;
+				position: fixed;
+				top: -530px;
+				height: 100%;
+				z-index: 999;
+				transition: all 0.5s ease-in-out;
+			}
+			.menu.active {
+				top: 20px;
+			}
+			.button {
+				width: 100px;
+				height: 100px;
+				cursor: pointer;
+				position: absolute;
+				top: 530px;
+			}
+			nav img,
+			.button {
+				width: 75px;
+				height: 75px;
+				background-color: #f1fcd3;
+				border: 2px solid #eae12f;
+				padding: 10px;
+				margin: 15px;
+				border-radius: 10%;
+				flex: 1;
+			}
+			/* định dạng menu dọc */
+			ul li {
+				position: relative;
+				z-index: 100;
+			}
+			ul li > ul {
+				list-style-type: none;
+				position: absolute;
+				top: 15px;
+				right: -150px;
+				border: 2px solid #eae12f;
+				border-radius: 10px;
+				width: 148px;
+				height: 95px;
+				background-color: #f1fcd3;
+				color: black;
+				font-size: 2rem;
+				display: none;
+				transform: translateX(-150px);
+				transition: transform 1s ease-in-out;
+				z-index: 1;
+			}
+			ul li > ul li {
+				text-align: center;
+				font-weight: bold;
+				padding: 40px 0;
+			}
+			ul li:hover > ul {
+				display: inline-block;
+			}
+			ul li > ul:hover {
+				transform: translateX(0);
+			}
+			/* Định dạng home */
+			.home {
+				width: 90%;
+				border: 5px solid #00887a;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.gt {
+				width: 100%;
+			}
+			.gt2,
+			.gt1 {
+				color: black;
+				font-size: 2.5rem;
+				display: block;
+			}
+			.gt1 {
+				padding: 20px 20px 0px 20px;
+			}
+			.gt2 {
+				padding: 0 60px;
+			}
+			.mucdich {
+				flex: 1;
+			}
+			.mucdich img {
+				width: 150px;
+				height: 150px;
+				margin: 30px 80px;
+			}
+			.mucdich p {
+				font-size: 2.5rem;
+				font-style: italic;
+				font-weight: bold;
+				text-align: center;
+				margin: 10px 30px;
+			}
+			/* dinh dang course */
+			.course img {
+				width: 200px;
+				height: 200px;
+				margin: 20px 200px;
+			}
+			.course p {
+				padding: 10px 30px;
+				font-size: 2rem;
+			}
+			.outline-width {
+				width: 400px;
+				background-color: #00887a;
+				outline-color: #00ceb9;
+				outline-style: solid;
+				outline-width: 0;
+			}
+			.outline-width-1 {
+				margin-top: 22px;
+				width: 400px;
+				background-color: #00887a;
+				outline-color: #00ceb9;
+				outline-style: solid;
+				/*animation: outline-width 1s infinite alternate;*/
+				outline-width: 0;
+			}
+			.outline-width-4 {
+				margin-top: 25px;
+				width: 400px;
+				background-color: #00887a;
+				outline-color: #00ceb9;
+				outline-style: solid;
+				outline-width: 0;
+			}
+
+			@keyframes outline-width {
+				0% {
+					outline-width: 0;
+				}
+				100% {
+					outline-width: 10px;
+				}
+			}
+			.course h4 {
+				color: white;
+				font-weight: bold;
+				font-size: 2.5rem;
+				text-align: center;
+				margin: 0 0 0 10px;
+				cursor: pointer;
+			}
+			.course {
+				flex: 1;
+				margin: 25px;
+				padding: 0 0 10px 0;
+				background-color: white;
+			}
+			/* Định dạng asignment */
+			table {
+				margin: 20px;
+				border-collapse: collapse;
+				background-color: white;
+			}
+			.home th,
+			.home td {
+				font-size: 2.5rem;
+				color: #00887a;
+				text-align: center;
+				padding: 20px 90px;
+				cursor: pointer;
+			}
+			.home tr {
+				border: 5px solid #00887a;
+			}
+			/* định dạng cho phần menu js */
+			.home {
+				display: none;
+			}
+			.active {
+				display: flex;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="logo1">
+				<a href="./index.html"
+					><img src="img/logo.png" alt="logo" class="logo"
+				/></a>
+			</div>
+			<div class="header">
+				<h1>Lợi ích</h1>
+				<h3>GIÁO DỤC GIỚI TÍNH</h3>
+			</div>
+			<div class="monkey1">
+				<img
+					src="https://vcdn1-giadinh.vnecdn.net/2020/07/28/giao-duc-1-1595874134-3094-1595874192.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=bd0gPw_w9BIaYbbo9uxe9g"
+					alt=""
+					class="monkey"
+				/>
+				<h5>
+					HOTLINE: 0904753008 <br />
+					EMAIL: mamtm.22ite@vku.udn.vn
+				</h5>
+			</div>
+		</header>
+		<div class="log">
+			<div class="box">
+				<a href="index.html"><h4>SIGN OUT</h4></a>
+			</div>
+			<p>Welcome</p>
+		</div>
+		<div class="menu">
+			<img class="button" src="img/icons8-menu-24.png" alt="" />
+			<nav>
+				<ul>
+					<a href="#home1" class="item">
+						<li>
+							<img src="img/home.png" alt="" />
+							<ul>
+								<li>HOME</li>
+							</ul>
+						</li></a
+					>
+					<a href="#course1" class="item">
+						<li>
+							<img src="img/course.png" alt="" />
+							<ul>
+								<li>BENEFIT</li>
+							</ul>
+						</li></a
+					>
+					<a href="#asignment" class="item">
+						<li>
+							<img src="img/homework (1).png" alt="" />
+							<ul>
+								<li>STATISTIC</li>
+							</ul>
+						</li></a
+					>
+				</ul>
+			</nav>
+		</div>
+		<main>
+			<div id="home1" class="home active">
+				<div class="gt">
+					<p class="gt1">
+						Giáo dục giới tính là quá trình giáo dục và truyền đạt kiến thức về
+						các khía cạnh liên quan đến giới tính, quan hệ giữa nam và nữ, vai
+						trò xã hội của giới tính và sự đa dạng giới tính:
+						<br />
+					</p>
+					<p class="gt2">
+						+ Hiểu và tôn trọng sự đa dạng giới tính
+						<br />+ Xây dựng lòng tự tin và nhận thức về bản thân <br />+ Giao
+						tiếp và quan hệ tốt hơn <br />+ Xóa bỏ những rào cản và định kiến
+						<br />+ Xây dựng quan hệ tình dục lành mạnh và an toàn <br />+ Tăng
+						cường ý thức về sự đồng thuận và sự phòng ngừa bạo lực <br />+ Xóa
+						bỏ rào cản nghề nghiệp và khuyến khích sự tham gia công bằng <br />+
+						Giảm thiểu tỷ lệ mắc bệnh và phòng ngừa bệnh tình liên quan đến giới
+						tính <br />+ Thúc đẩy sự công bằng và phát triển bền vững
+					</p>
+					<p class="gt1">Giáo dục giới tính ở các cấp:</p>
+				</div>
+				<div class="mucdich">
+					<p>Mầm non</p>
+					<img src="img/icons8-education-64.png" alt="" />
+				</div>
+				<div class="mucdich">
+					<p>Tiểu học</p>
+					<img src="img/icons8-education-64 (1).png" alt="" />
+				</div>
+				<div class="mucdich">
+					<p>Trung học cơ sở</p>
+					<img src="img/homework.png" alt="" />
+				</div>
+				<div class="mucdich">
+					<p>Trung học phổ thông</p>
+					<img src="img/education.png" alt="" style="margin: 20px 80px" />
+				</div>
+			</div>
+			<div id="course1" class="home">
+				<div class="course">
+					<img
+						style="margin-left: 30px; width: 500px; height: 350px"
+						src="https://vtv1.mediacdn.vn/Uploaded/thutrang/2013_11_02/%C3%A1%204.jpg"
+						alt=""
+					/>
+					<p>
+						<b style="font-size: 2.3rem"
+							>Hiểu và tôn trọng sự đa dạng giới tính</b
+						><br /><br />
+						Giáo dục giới tính giúp con người hiểu rõ rằng giới tính không chỉ
+						giới hạn trong hai loại nam và nữ, mà còn có sự đa dạng khác nhau.
+						Điều này giúp xóa bỏ những định kiến và phân biệt đối xử dựa trên
+						giới tính, tạo điều kiện cho môi trường xã hội công bằng và đa dạng
+						hơn.<br />
+					</p>
+					<div class="outline-width">
+						<h4>XEM THÊM</h4>
+					</div>
+				</div>
+				<div class="course">
+					<img
+						style="margin-left: 20px; width: 500px; height: 350px"
+						src="./img/genderbarrier.jpg"
+						alt=""
+					/>
+
+					<p>
+						<b style="font-size: 2.3rem">Xóa bỏ những rào cản và định kiến</b>
+						<br /><br />
+						Qua giáo dục giới tính, con người học cách hiểu và tôn trọng giới
+						tính của người khác. Điều này giúp cải thiện khả năng giao tiếp, xây
+						dựng quan hệ tốt và giảm thiểu xung đột xã hội liên quan đến giới
+						tính.
+					</p>
+					<div class="outline-width-1">
+						<h4>XEM THÊM</h4>
+					</div>
+				</div>
+				<div class="course">
+					<img style="margin-left: 30px; width: 500px; height: 350px" src="https://tamly.com.vn/wp-content/uploads/2022/05/bao-luc-hoc-duong-3.jpg" alt="" />
+					<p>
+						<b style="font-size: 2.3rem"
+							>Giảm thiểu bạo lực và quấy rối tình dục</b
+						><br /><br />
+						Giáo dục giới tính đóng vai trò quan trọng trong việc giảm thiểu bạo
+						lực và quấy rối tình dục. Nó cung cấp cho học sinh kiến thức về sự
+						đồng thuận, giới hạn cá nhân và quyền từ chối. Điều này giúp tạo ra
+						một môi trường học tập và làm việc an toàn, giảm thiểu các tình
+						huống bạo lực và quấy rối tình dục.
+					</p>
+					<div class="outline-width">
+						<h4>XEM THÊM</h4>
+					</div>
+				</div>
+				<div class="course">
+					<img style="margin-left: 30px; width: 500px; height: 350px" src="https://suckhoedoisong.qltns.mediacdn.vn/JRGSJiLd3e5GsxdM0P2pqg65KoKccc/Image/2013/02/Trang-4-quan-he-tinh-duc-deu-dan-giup-cuoc-song-vui-ve-39edf.jpg" alt="" />
+					<p>
+						<b style="font-size: 2.3rem">Xây dựng mối quan hệ tình dục lành mạnh:</b><br /><br />
+						Giáo dục giới tính cung cấp cho học sinh kiến thức về quan hệ tình dục lành mạnh, bao gồm khái niệm về tình yêu, sự tôn trọng và trách nhiệm. Điều này giúp xây dựng mối quan hệ tình dục tích cực và an toàn trong tương lai.
+					</p>
+					<div class="outline-width-4">
+						<h4>XEM THÊM</h4>
+					</div>
+				</div>
+			</div>
+			<div id="asignment" class="home">
+				<img src="./img/thongke.jpg" alt="">
+			</div>
+		</main>
+		<footer>
+			<div class="app">
+				<img src="img/face.png" alt="" />
+				<img src="img/ins.png" alt="" />
+				<img src="img/tiktok.png" alt="" />
+				<img src="img/app.png" alt="" />
+			</div>
+			<div class="locate">
+				<img src="img/map.png" alt="" />
+				<p>
+					Địa chỉ: <br />
+					ĐỔI FOOTER Ở ĐÂY <br />
+					Cơ sở 2: Thị xã Hoài Nhơn, tỉnh Bình Định
+				</p>
+			</div>
+			<p class="by">Web design by Marry Ryan</p>
+		</footer>
+		<script>
+			const menuItems = document.querySelectorAll(".item");
+			const sections = document.querySelectorAll(".home");
+
+			menuItems.forEach((item) => {
+				item.addEventListener("click", () => {
+					const currentSection = document.querySelector(
+						item.getAttribute("href")
+					);
+					sections.forEach((section) => {
+						section.classList.remove("active");
+					});
+					currentSection.classList.add("active");
+				});
+			});
+			/* Lấy nút toggle và thanh menu */
+			var menuToggle = document.querySelector(".button");
+			var menu = document.querySelector(".menu");
+
+			/* Thêm sự kiện click vào nút toggle */
+			menuToggle.addEventListener("click", function () {
+				/* Toggle class active để hiển thị/ẩn thanh menu */
+				menu.classList.toggle("active");
+			});
+		</script>
+	</body>
+</html>
